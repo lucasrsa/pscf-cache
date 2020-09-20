@@ -10,7 +10,6 @@ public class Address {
     private final int s;
     private final int t;
     private final int r;
-    private final int cleanAddr;
 
     //nessa classe address fazemos as contas em bits para calcular o w, s, r, t
     public Address(int addr) {
