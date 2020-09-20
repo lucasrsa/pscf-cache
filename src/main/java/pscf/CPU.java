@@ -1,4 +1,4 @@
-package pscf;
+package trabalho;
 
 import java.util.Random;
 
@@ -13,12 +13,20 @@ public class CPU {
     }
 
     public void Run(int x) throws InvalidAddress {
+
+
         Random generator = new Random();
         int aux;
 
-        for (int i=0; i<x; ++i) {
-            aux = generator.nextInt((int) Math.pow(2,24));
+        for (int i = 0; i < 120; ++i) {
+
+
+            aux = generator.nextInt((int) Math.pow(2, 24));
+
             io.Write(aux + " -> " + cache.Get(aux));
+            cache.Set(aux, -10);
+            io.Write(aux + " -< " + cache.Get(aux));
+
             ++aux;
             io.Write(aux + " -> " + cache.Get(aux));
             ++aux;
@@ -40,5 +48,7 @@ public class CPU {
             ++aux;
             io.Write(aux + " -> " + cache.Get(aux));
         }
+
+
     }
 }
