@@ -1,9 +1,9 @@
-package pscf;
+package trabalho;
 
 import java.util.Random;
 
 public class RAM {
-    private long [] mem = null;
+    private long[] mem = null;
     private int size = 0;
 
     public RAM(int size) {
@@ -12,14 +12,14 @@ public class RAM {
         this.mem = new long[size];
     }
 
-    public int Size() { return this.size; }
+    public int Size() {
+        return this.size;
+    }
 
     public void Initialyze() {
-
         Random gerador = new Random();
-
-        for(int i=0; i<this.size; ++i){
-            this.mem[i] = gerador.nextLong();
+        for (int i = 0; i < this.size; ++i) {
+            this.mem[i] =  i;
         }
     }
 
@@ -29,9 +29,9 @@ public class RAM {
     }
 
     public long[] Get(int address, int size) throws InvalidAddress {
-        long [] block = new long[size];
+        long[] block = new long[size];
         CheckAddress(address);          // This function throws InvalidAddress
-        CheckAddress(address+size-1);   // This function throws InvalidAddress
+        CheckAddress(address + size - 1);   // This function throws InvalidAddress
         System.arraycopy(mem, address, block, 0, size);
         return block;
     }
@@ -40,6 +40,15 @@ public class RAM {
         CheckAddress(address);
         mem[address] = word;
     }
+
+    public void Set(int address, int size, long[] block) throws InvalidAddress {
+        CheckAddress(address);          // This function throws InvalidAddress
+        CheckAddress(address + size - 1);   // This function throws InvalidAddress
+        //Começa da pos 2 para pular os valore de t e da flag
+        System.arraycopy(block, 2, mem, address, size);
+
+    }
+
 
     private void CheckAddress(int address) throws InvalidAddress {
         if (address < 0 || address >= this.size)
