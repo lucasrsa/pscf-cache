@@ -2,7 +2,7 @@ package trabalho;
 
 public class Main {
     /*
-    Nome:
+    Nomes:
     Davi Leal
     Diego Basgal
     Guilherme Solski Alves
