@@ -3,10 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package trabalho;
-
-import java.lang.reflect.Array;
-import java.util.Arrays;
+package pscf;
 
 public class Cache {
     private final int wordCount;
@@ -41,7 +38,7 @@ public class Cache {
     }
 
     // Seta valor na cache e marca a flag como editado
-    public void Set(int addr, int word) throws InvalidAddress {
+    public void Set(int addr, long word) throws InvalidAddress {
         Address address = new Address(addr);
         //lança erro se o endreço não existir
         if (!this.CheckAddr(address)) {

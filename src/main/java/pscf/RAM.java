@@ -1,6 +1,4 @@
-package trabalho;
-
-import java.util.Random;
+package pscf;
 
 public class RAM {
     private long[] mem = null;
@@ -17,7 +15,6 @@ public class RAM {
     }
 
     public void Initialyze() {
-        Random gerador = new Random();
         for (int i = 0; i < this.size; ++i) {
             this.mem[i] =  i;
         }

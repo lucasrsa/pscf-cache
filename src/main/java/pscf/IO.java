@@ -1,4 +1,4 @@
-package trabalho;
+package pscf;
 
 public class IO {
     private java.io.PrintStream out = null;
