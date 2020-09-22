@@ -12,7 +12,7 @@ public class CPU {
 
     public void Run(int x) throws InvalidAddress {
         io.Write(x + " -> " + cache.Get(x));
-        cache.Set(x, cache.Get(x) - 10);
-        io.Write(x + " <- " + cache.Get(x));
+        // cache.Set(x, cache.Get(x) - 10);
+        // io.Write(x + " <- " + cache.Get(x));
     }
 }
