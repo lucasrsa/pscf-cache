@@ -5,7 +5,6 @@ public class RAM {
     private int size = 0;
 
     public RAM(int size) {
-        System.out.println(size);
         this.size = size;
         this.mem = new long[size];
     }
